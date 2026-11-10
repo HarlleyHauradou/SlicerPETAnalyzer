@@ -2,7 +2,7 @@
 
 ## Analytical cases
 
-Run `PYTHONPATH=PETAnalyzer python -m unittest discover -s tests -v` from the repository root after installing NumPy and SciPy. The tests cover one-syringe activity conservation and decay, two-syringe truth, invalid preparations, exact voxelized spheres, blurred detection, blank data, ROI overlap, five-plane sampling and English export.
+Run `PYTHONPATH=PETAnalyzer python -m unittest discover -s tests -v` from the repository root after installing NumPy and SciPy. The tests cover one-syringe activity conservation and decay, two-syringe truth, invalid preparations, exact voxelized spheres, blurred detection, blank data, ROI overlap, five-plane sampling and report export.
 
 ## Measured PET DICOM
 
@@ -16,7 +16,7 @@ PYTHONPATH=PETAnalyzer python tests/validate_measured_pet.py DICOM_SBR_4_1.zip \
 
 This check verifies scaling, plausible recovery, automatic six-point localization and report export. The independently placed liquid ROI measures approximately 2.972 kBq/mL (−4.12% from 3.1 kBq/mL). Across the 30 reconstructions in this archive, automatic localization succeeded for all series. The largest per-label shift was 2.10 mm relative to the first Q.Clear series. The fixture lacks an independent CT-based segmentation reference, so the shift assesses consistency rather than positional accuracy. The measured test verifies pipeline operation and is not an accuracy study.
 
-[Example English report](examples/measured-pet-report.html)
+[Example report](examples/measured-pet-report.html)
 
 ## Slicer integration
 

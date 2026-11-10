@@ -18,6 +18,7 @@ class PETAnalyzer(ScriptedLoadableModule):
     def __init__(self, parent):
         super().__init__(parent)
         parent.title = "PET Analyzer"
+        parent.icon = qt.QIcon(str(Path(__file__).parent / "Resources" / "PETAnalyzer.png"))
         parent.categories = ["Quantification"]
         parent.contributors = ["Harlley Hauradou"]
         parent.helpText = ("Analyze quantitative IEC hot-sphere phantom images. "
@@ -94,7 +95,7 @@ class PETAnalyzerWidget(ScriptedLoadableModuleWidget):
         self.form.addRow(self.chart)
         self.confirm = qt.QCheckBox("I reviewed the overlay, diameter labels and ROI placement")
         self.form.addRow(self.confirm)
-        self.export_button = self.button("Export English report and data", self.save)
+        self.export_button = self.button("Export report and data", self.save)
         self.export_button.enabled = False
         self.confirm.toggled.connect(self.update_export)
         self.layout.addStretch(1)
